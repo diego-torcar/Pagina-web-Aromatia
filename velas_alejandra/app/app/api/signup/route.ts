@@ -11,9 +11,12 @@ export async function POST(req: Request) {
       },
     });
 
-    return new Response(JSON.stringify(user), { status: 201 });
+   return new Response(JSON.stringify(user), { status: 201 });
   } catch (error) {
     console.error("❌ Error en /api/signup:", error);
-    return new Response(JSON.stringify({ error: "Error creando usuario" }), { status: 500 });
+    return new Response(
+      JSON.stringify({ error: "Error creando usuario" }),
+      { status: 500 }
+    );
   }
 }
