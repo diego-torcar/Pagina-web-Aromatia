@@ -6,8 +6,7 @@ const nextConfig = {
   output: 'standalone',
   experimental: {
     outputFileTracingRoot: path.join(__dirname, '../'),
-    serverComponentsExternalPackages: ["@prisma/client", "prisma"], // 
-
+    serverComponentsExternalPackages: ['@prisma/client', 'prisma'],
   },
   eslint: {
     ignoreDuringBuilds: true,
@@ -16,10 +15,11 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
   images: { unoptimized: true },
-};
 
-    async redirects() {
-  return [];
-},
+  // 👇 Ojo: esto es una PROPIEDAD del objeto, no código suelto
+  async redirects() {
+    return [];
+  },
+};
 
 module.exports = nextConfig;
