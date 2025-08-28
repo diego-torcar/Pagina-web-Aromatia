@@ -7,6 +7,9 @@ const nextConfig = {
   experimental: {
     outputFileTracingRoot: path.join(__dirname, '../'),
     serverComponentsExternalPackages: ["@prisma/client", "prisma"], // 
+    async redirects() {
+  return [];
+},
   },
   eslint: {
     ignoreDuringBuilds: true,
